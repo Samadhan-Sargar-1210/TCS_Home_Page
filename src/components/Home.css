@@ -1,0 +1,232 @@
+/* General Styles */
+.home {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('../assets/tcs-hero-background.jpg'); /* Relative path */
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative; 
+}
+
+.hero::before {
+ 
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(95, 104, 195); 
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 700px;
+  z-index: 2; 
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #ff4c4c; /* Button color */
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: white; 
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ff7979; /* Button hover color */
+}
+
+/* Add Keyframes for Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Features Section */
+.features {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out; 
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #00539f;
+  animation: fadeIn 1.5s ease-in-out; 
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0; /* Initially hidden */
+  animation: slideUp 0.8s ease-in-out forwards;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.4s; 
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.6s; 
+}
+
+.card img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
+}
+
+
+.cta {
+  background-color: #00539f;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1; 
+}
+
+.cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.cta a {
+  background-color: #ff4c4c;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: white; 
+  transition: background-color 0.3s;
+  text-decoration: none; 
+}
+
+.cta a:hover {
+  background-color: #ff7979;
+}
+
+
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .features h2 {
+    font-size: 2rem;
+  }
+
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .cta h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .feature-cards {
+    justify-content: center;
+  }
+
+  .card {
+    width: 45%; 
+  }
+}
